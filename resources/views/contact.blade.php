@@ -6,26 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Contact Us - Global Security</title>
+    <style>
+        .active-link {
+            position: relative;
+            font-weight: 600;
+        }
+
+        .active-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            bottom: -2px;
+            left: 0;
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 70vh; /* Adjusted height to make it smaller */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .parallax-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        .content-section {
+            background-color: white;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    </style>
 </head>
 
 <body class="font-sans bg-gray-100">
 
-<nav class="flex justify-between items-center p-6 bg-white shadow-md">
+<nav class="fixed top-0 w-full flex justify-between items-center p-6 bg-white shadow-md z-50">
     <div class="logo">
         <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
     </div>
     <div class="space-x-4">
-        <a href="{{ url('/') }}" class="text-gray-800 hover:text-gray-600">Home</a>
-        <a href="{{ url('/about') }}" class="text-gray-800 hover:text-gray-600">About</a>
-        <a href="{{ url('/services') }}" class="text-gray-800 hover:text-gray-600">Services</a>
-        <a href="{{ url('/contact') }}" class="text-gray-800 hover:text-gray-600 active">Contact Us</a>
-        <a href="{{ url('/faq') }}" class="text-gray-800 hover:text-gray-600">FAQ</a>
+        <a href="{{ url('/') }}" class="text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
+        <a href="{{ url('/about') }}" class="text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+        <a href="{{ url('/services') }}" class="text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+        <a href="{{ url('/contact') }}" class="text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
+        <a href="{{ url('/faq') }}" class="text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
     </div>
 </nav>
 
-<section class="relative h-80 bg-cover bg-center" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
+<section class="relative parallax-section" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <section class="text-center text-white">
+        <section class="parallax-content text-center text-white">
             <h1 class="text-5xl font-bold">Contact Us</h1>
         </section>
     </div>
@@ -124,14 +164,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        window.addEventListener("scroll", function () {
-            var nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
+        const currentLocation = window.location.href;
+        const menuItems = document.querySelectorAll('nav a');
+        const menuLength = menuItems.length;
+        for (let i = 0; i < menuLength; i++) {
+            if (menuItems[i].href === currentLocation) {
+                menuItems[i].classList.add("active-link");
             }
-        });
+        }
     });
 </script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
     <style>
         .hover-card:hover {
             transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .hover-card {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .fade {
@@ -22,35 +24,15 @@
             from {
                 opacity: 0.4;
             }
-
             to {
                 opacity: 1;
             }
         }
 
-        .social-icons {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            display: block;
-            width: 40px;
-            height: 40px;
-        }
-
-        .social-icons img {
-            width: 100%;
-            height: 100%;
-        }
-
         .active-link {
-            color: darkblue;
+            color: #3f51b5;
             position: relative;
+            font-weight: 600;
         }
 
         .active-link::after {
@@ -58,7 +40,7 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background-color: black;
+            background-color: #3f51b5;
             bottom: -2px;
             left: 0;
         }
@@ -72,15 +54,63 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background-color: black;
+            background-color: #3f51b5;
             bottom: -2px;
             left: 0;
             transition: width 0.3s;
         }
+
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .fade-in-box {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #404A66;
+            margin-bottom: 0.5rem;
+        }
+
+        .text-container h2 {
+            margin-bottom: 1rem;
+        }
+
+        .parallax {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
-<body class="font-sans bg-white">
-<nav class="fixed top-0 w-full z-50 bg-white shadow">
+
+<body class="font-sans bg-gray-50">
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
     <div class="flex justify-between items-center py-4 px-6">
         <div class="logo">
             <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
@@ -93,16 +123,16 @@
             </button>
         </div>
         <div class="hidden md:flex space-x-4">
-            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600">Home</a>
-            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 active">About</a>
-            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600">Services</a>
-            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600">Contact Us</a>
-            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600">FAQ</a>
+            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
+            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
+            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
         <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
-        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
         <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
         <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
         <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
@@ -110,80 +140,79 @@
 </nav>
 
 <!-- Upper Image Section -->
-<section class="relative h-96 bg-cover bg-center" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}'); padding-top: 4rem;">
+<section class="relative parallax" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="absolute inset-0 flex items-center justify-center">
         <h1 class="text-5xl font-bold text-white">ABOUT US</h1>
     </div>
 </section>
 
-<section class="bg-gray-200 py-12">
+<section class="bg-white py-12">
     <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-12">
-        <div class="lg:w-1/2 relative mb-8 lg:mb-0 overflow-hidden rounded-lg shadow-lg bg-white transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+        <div class="lg:w-1/2 relative mb-8 lg:mb-0 overflow-hidden rounded-lg shadow-lg hover-card fade-in-box" style="animation-delay: 0.2s;">
             <div class="rounded-lg overflow-hidden">
                 <img src="{{ asset('images/defense.jpeg') }}" alt="Person Image" class="w-full transition duration-300 ease-in-out transform hover:scale-110">
             </div>
             <div class="absolute top-0 left-0 bg-gradient-to-b from-transparent to-black w-full h-full opacity-50 transition duration-300 ease-in-out"></div>
             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center transition duration-300 ease-in-out opacity-0 hover:opacity-100">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white text-center">Meet John Doe</h2>
+                <h2 class="title text-white text-center">Meet John Doe</h2>
             </div>
         </div>
-        <div class="lg:w-2/3 lg:pl-20">
-            <div class="text-container bg-white rounded-lg p-6 lg:p-8">
-                <p class="text-gray-600 leading-relaxed">John Doe is an esteemed figure in the realm of security, boasting an illustrious career spanning more than a decade. With a proven track record of success, John has navigated the complexities of the security landscape with finesse and precision. Throughout his tenure, he has spearheaded a myriad of high-stakes endeavors, deploying innovative strategies to mitigate risks and safeguard assets.</p>
-                <p class="text-gray-600 leading-relaxed mt-4">Renowned for his unwavering commitment to excellence, John approaches each project with meticulous attention to detail and an unwavering dedication to achieving optimal outcomes. His expertise extends beyond traditional security paradigms, encompassing a holistic understanding of emerging threats and vulnerabilities.</p>
-                <p class="text-gray-600 leading-relaxed mt-4">A consummate professional, John is revered for his ability to forge strong relationships with clients, earning their trust through transparent communication and proactive problem-solving. His innate ability to anticipate challenges and devise effective solutions has earned him accolades within the industry, positioning him as a trusted advisor and confidant to businesses of all sizes.</p>
+        <div class="lg:w-2/3 lg:pl-20 fade-in-box" style="animation-delay: 0.4s;">
+            <div class="text-container bg-white rounded-lg p-6 lg:p-8 card-shadow">
+                <h2 class="title">Title</h2>
+                <p class="text-gray-800 leading-relaxed">John Doe is an esteemed figure in the realm of security, boasting an illustrious career spanning more than a decade. With a proven track record of success, John has navigated the complexities of the security landscape with finesse and precision. Throughout his tenure, he has spearheaded a myriad of high-stakes endeavors, deploying innovative strategies to mitigate risks and safeguard assets.</p>
+                <p class="text-gray-800 leading-relaxed mt-4">Renowned for his unwavering commitment to excellence, John approaches each project with meticulous attention to detail and an unwavering dedication to achieving optimal outcomes. His expertise extends beyond traditional security paradigms, encompassing a holistic understanding of emerging threats and vulnerabilities.</p>
+                <p class="text-gray-800 leading-relaxed mt-4">A consummate professional, John is revered for his ability to forge strong relationships with clients, earning their trust through transparent communication and proactive problem-solving. His innate ability to anticipate challenges and devise effective solutions has earned him accolades within the industry, positioning him as a trusted advisor and confidant to businesses of all sizes.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="bg-[#404A66] text-white py-12">
+    <div class="container mx-auto text-center px-6">
+        <h2 class="title text-3xl mb-4">Ready to Secure Your Future?</h2>
+        <p class="mb-8">Contact us today to discuss how Global Security AHS can help protect your assets and ensure the safety of your operations.</p>
+        <a href="{{ url('/contact') }}" class="bg-white text-blue-500 font-bold py-3 px-6 rounded-full hover:bg-gray-200 transition duration-300">Contact Us</a>
     </div>
 </section>
 
 <!-- Mission, Vision, Values Section -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 mt-10">
-    <div class="bg-gray-200 p-6 rounded-lg shadow hover-card">
-        <h2 class="text-xl font-bold mb-2">Our Mission</h2>
-        <p class="text-gray-700">At GSAHS, our mission is to ensure the safety and security of your operations, assets, and people. We believe that a secure environment is the foundation of any successful enterprise, and we are dedicated to providing advanced security solutions that safeguard against today’s ever-evolving threats. Our team of highly trained professionals brings decades of experience in intelligence, counter-terrorism, and security operations to the table, enabling us to handle complex security challenges with unmatched expertise</p>
+<div class="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.2s;">
+        <h2 class="subtitle">Our Mission</h2>
+        <p class="text-gray-700">At GSAHS, our mission is to ensure the safety and security of your operations, assets, and people. We believe that a secure environment is the foundation of any successful enterprise, and we are dedicated to providing advanced security solutions that safeguard against today’s ever-evolving threats. Our team of highly trained professionals brings decades of experience in intelligence, counter-terrorism, and security operations to the table, enabling us to handle complex security challenges with unmatched expertise.</p>
     </div>
-    <div class="bg-gray-200 p-6 rounded-lg shadow hover-card">
-        <h2 class="text-xl font-bold mb-2">Our Vision</h2>
+    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.4s;">
+        <h2 class="subtitle">Our Vision</h2>
         <p class="text-gray-700">Our vision is to be the world's leading provider of strategic security solutions, recognized for our unwavering integrity, innovative approaches, and enduring commitment to our clients' safety. We aim to continuously evolve our services to stay ahead of global security trends and to provide peace of mind in an uncertain world.</p>
     </div>
-    <div class="bg-gray-200 p-6 rounded-lg shadow hover-card">
-        <h2 class="text-xl font-bold mb-2">Our Values</h2>
-        <p class="text-gray-700">Integrity and Confidentiality: At the heart of our operations lies a staunch commitment to ethical conduct and maintaining the confidentiality of our clients.
-            Reliability: We pride ourselves on the consistency and dependability of our services, ensuring you can rely on us when it matters most.
-            Proactivity: Our proactive approach in assessing threats and planning accordingly ensures that we stay ahead of risks, providing security that is as dynamic as the world around us.</p>
+    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.6s;">
+        <h2 class="subtitle">Our Values</h2>
+        <p class="text-gray-700">Integrity and Confidentiality: At the heart of our operations lies a staunch commitment to ethical conduct and maintaining the confidentiality of our clients. Reliability: We pride ourselves on the consistency and dependability of our services, ensuring you can rely on us when it matters most. Proactivity: Our proactive approach in assessing threats and planning accordingly ensures that we stay ahead of risks, providing security that is as dynamic as the world around us.</p>
     </div>
 </div>
 
 <!-- Additional Sections -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 py-8">
-    <div class="bg-gray-200 p-6 rounded-lg shadow hover-card">
-        <h2 class="text-xl font-bold mb-2">Quality Assurance</h2>
+<div class="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.8s;">
+        <h2 class="subtitle">Quality Assurance</h2>
         <p class="text-gray-700">We guarantee high standards in all our services, ensuring reliability and efficiency.</p>
     </div>
-    <div class="bg-gray-200 p-6 rounded-lg shadow hover-card">
-        <h2 class="text-xl font-bold mb-2">Client Focus</h2>
+    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 1s;">
+        <h2 class="subtitle">Client Focus</h2>
         <p class="text-gray-700">We are committed to meeting the specific needs of our clients, ensuring their utmost satisfaction.</p>
     </div>
-    <div class="bg-gray-200 p-6 rounded-lg shadow hover-card">
-        <h2 class="text-xl font-bold mb-2">Innovation</h2>
+    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 1.2s;">
+        <h2 class="subtitle">Innovation</h2>
         <p class="text-gray-700">We embrace innovation, continuously seeking out new ways to enhance security and service delivery.</p>
     </div>
 </div>
 
-<!-- Call to Action Section -->
-<section class="bg-teal-500 text-white py-12">
-    <div class="container mx-auto text-center px-6">
-        <h2 class="text-3xl font-bold mb-4">Ready to Secure Your Future?</h2>
-        <p class="mb-8">Contact us today to discuss how Global Security AHS can help protect your assets and ensure the safety of your operations.</p>
-        <a href="{{ url('/contact') }}" class="bg-white text-teal-500 font-bold py-3 px-6 rounded-full hover:bg-gray-200 transition duration-300">Contact Us</a>
-    </div>
-</section>
-
 <!-- Footer -->
-<footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-6">
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6 lg:px-12">
         <div class="flex flex-wrap justify-between">
             <div class="w-full md:w-1/3 mb-6 md:mb-0">
                 <h3 class="text-2xl font-bold mb-4">Global<span class="text-teal-500">Security</span></h3>
@@ -232,7 +261,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
     // Toggle mobile menu
-    document.getElementById('menu-toggle').onclick = function() {
+    document.getElementById('menu-toggle').onclick = function () {
         var menu = document.getElementById('menu');
         menu.classList.toggle('hidden');
     };
@@ -246,6 +275,27 @@
             link.classList.add('active-link');
         }
     });
+
+    // Check for elements to animate on scroll
+    window.addEventListener("scroll", function () {
+        var elementsToShow = document.querySelectorAll('.fade-in-box');
+        elementsToShow.forEach(function (element) {
+            if (isElementInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    });
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 </script>
 </body>
+
 </html>

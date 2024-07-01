@@ -38,15 +38,17 @@
         .active-link {
             color: darkblue;
             position: relative;
+            font-weight: 600;
         }
 
         .active-link::after {
             content: '';
             position: absolute;
+            width: 100%;
             height: 2px;
             background-color: black;
-            left: 0;
             bottom: -2px;
+            left: 0;
             animation: slideIn 0.3s forwards;
         }
 
@@ -72,6 +74,14 @@
             bottom: -2px;
             animation: slideIn 0.3s forwards;
         }
+
+        .parallax {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -90,27 +100,27 @@
             </button>
         </div>
         <div class="hidden md:flex space-x-4">
-            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600">Home</a>
-            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600">About</a>
-            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 active-link">Services</a>
-            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600">Contact Us</a>
-            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600">FAQ</a>
+            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
+            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
+            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
         <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
-        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
-        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
-        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
-        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
+        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
     </div>
 </nav>
 
-<section class="relative h-96 bg-cover bg-center pt-32" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 md:px-12 z-10">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">Our Services</h1>
-        <p class="text-xl md:text-2xl">Explore what we offer</p>
+<section class="relative parallax" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
+    <div class="absolute inset-0 bg-black opacity-50 flex items-center justify-center">
+        <section class="text-center text-white">
+            <h1 class="text-5xl font-bold">Our Services</h1>
+        </section>
     </div>
 </section>
 
@@ -160,9 +170,9 @@
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
                 <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">Surveillance Systems</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
+                    <h3 class="text-2xl font-bold mb-4">Surveillance Systems</h4>
+                        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                        <a href="#" class="text-teal-500 hover:underline">Learn More</a>
                 </div>
             </div>
         </div>
