@@ -91,7 +91,7 @@
         .subtitle {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #404A66;
+            color: #2c3e50;
             margin-bottom: 0.5rem;
         }
 

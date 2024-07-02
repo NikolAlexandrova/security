@@ -34,6 +34,7 @@
             font-weight: 700;
             letter-spacing: 1px;
             color: #2c3e50;
+
         }
 
         .subtitle {
@@ -63,6 +64,7 @@
             left: 0;
         }
 
+
         .parallax-section {
             position: relative;
             height: 70vh;
@@ -90,8 +92,6 @@
         .text-teal-500 {
             color: #319795; /* You can change this to the exact green color you need */
         }
-        /* Add this CSS in your stylesheet if not already present */
-
 
     </style>
 </head>
@@ -194,7 +194,9 @@
                 <a href="{{ url('/services') }}" class="hover:text-gray-400">Services</a>
                 <a href="{{ url('/contact') }}" class="hover:text-gray-400">Contact</a>
             </p>
+
             <p class="text-gray-400 mt-4">Global Security AHS ©️ 2007</p>
+
             <div class="flex space-x-4 mt-4">
                 <a href="#" target="_blank" class="text-white hover:text-gray-400">
                     <img src="{{ asset('images/facebook.jpeg') }}" alt="Facebook Icon" class="w-8 h-8">

@@ -51,6 +51,7 @@
 <body class="font-sans bg-gray-100">
 
 <nav class="fixed top-0 w-full flex justify-between items-center p-6 bg-white shadow-md z-50">
+
     <div class="logo">
         <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
     </div>
@@ -80,22 +81,20 @@
         <p class="mb-6">Please ensure that all required fields marked with a red asterisk (*) are filled out.</p>
 
         @if(session('success'))
-            <div class="bg-green-500 text-white p-4 rounded-lg mb-6">
-                {{ session('success') }}
+            <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3" role="alert">
+                <p class="font-bold">Success</p>
+                <p class="text-sm">{{ session('success') }}</p>
             </div>
         @endif
 
-        @if($errors->any())
-            <div class="bg-red-500 text-white p-4 rounded-lg mb-6">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+        @if(session('error'))
+            <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                <p class="font-bold">Error</p>
+                <p class="text-sm">{{ session('error') }}</p>
             </div>
         @endif
 
-        <form id="contact-form" action="{{ route('contact.send') }}" method="post" class="space-y-4">
+        <form action="{{ route('contact.send') }}" method="post" class="space-y-4">
             @csrf
             <div>
                 <label for="name" class="block text-gray-700">Full name <span class="text-red-500">*</span></label>
@@ -109,7 +108,7 @@
                 <label for="message" class="block text-gray-700">Message <span class="text-red-500">*</span></label>
                 <textarea rows="6" placeholder="Your Message" id="message" name="message" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
             </div>
-            <button type="submit" id="submit" name="submit" class="w-full px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-700 transition duration-300">Send</button>
+            <button type="submit" class="w-full px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-700 transition duration-300">Send</button>
         </form>
     </div>
 </div>
@@ -144,7 +143,7 @@
             </div>
 
             <div class="w-full md:w-1/3">
-                <h4 class="font-bold mb-4">About the company</h4>
+                <h4 class="font-bold mb-2">About the company</h4>
                 <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
@@ -176,5 +175,4 @@
 </script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
-
 </html>
