@@ -50,8 +50,8 @@
         }
 
         .active-link {
-            color: darkblue;
             position: relative;
+            font-weight: 600;
         }
 
         .active-link::after {
@@ -78,6 +78,17 @@
             left: 0;
             transition: width 0.3s;
         }
+
+        .slide-in-from-right {
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .slide-in-from-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 
@@ -95,11 +106,11 @@
             </button>
         </div>
         <div class="hidden md:flex space-x-4">
-            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600">Home</a>
-            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600">About</a>
-            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600">Services</a>
-            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600">Contact Us</a>
-            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600">FAQ</a>
+            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
+            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
+            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
@@ -149,7 +160,7 @@
             <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             <a href="{{ url('/about') }}" class="bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300">Learn More</a>
         </div>
-        <div class="about-image md:w-1/2">
+        <div class="about-image md:w-1/2 slide-in-from-right visible">
             <img src="{{ asset('images/1e5b30d4-2bf2-4eba-b780-88080e827c6a.jpeg') }}" alt="About Us Image" class="rounded-lg shadow-lg">
         </div>
     </div>
@@ -257,7 +268,7 @@
             }
 
             // Check for elements to animate on scroll
-            var elementsToShow = document.querySelectorAll('.appear-on-scroll');
+            var elementsToShow = document.querySelectorAll('.appear-on-scroll, .slide-in-from-right');
             elementsToShow.forEach(function(element) {
                 if (isElementInViewport(element)) {
                     element.classList.add('visible');
