@@ -5,27 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>Our Services</title>
+    <title>Security Training</title>
     <style>
-        .hover-card:hover {
-            transform: scale(1.05);
-        }
-
-        .hover-card {
-            transition: transform 0.3s ease;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .scrolled {
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -83,6 +64,10 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        .text-outline {
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
 
@@ -91,7 +76,7 @@
 <nav class="fixed top-0 w-full z-50 bg-white shadow">
     <div class="flex justify-between items-center py-4 px-6">
         <div class="logo">
-            <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
+            <img src="images/security_logo-removebg-preview.png" alt="Your Logo" class="w-24">
         </div>
         <div class="md:hidden">
             <button id="menu-toggle" class="text-gray-800 focus:outline-none">
@@ -110,87 +95,80 @@
     </div>
     <div id="menu" class="hidden md:hidden">
         <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
-        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
-        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
-        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
-        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
+        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
+        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
     </div>
 </nav>
 
-<section class="relative parallax" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
+<section class="relative parallax" style="background-image: url('images/pexels-lukas-669283.jpg');">
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="absolute inset-0 flex items-center justify-center">
         <section class="text-center z-10">
-            <h1 class="text-5xl font-bold text-white">Our Services</h1>
+            <h1 class="text-5xl font-bold text-white text-outline">Security Training</h1>
         </section>
     </div>
 </section>
 
-<section class="py-12 bg-gray-100">
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl font-bold mb-8">Security Training and Qualification Division</h2>
+        <p class="text-gray-700 mb-12 max-w-3xl mx-auto">The Security Training and Qualification Division specializes in training security agents and units for a variety of missions, including VIP security, sensitive installations, aviation, maritime security, and more. We serve organizations globally, providing top-tier training tailored to specific needs.</p>
+    </div>
+</section>
+
+<section class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 md:px-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('images/6712c3ca-de7e-4c62-8c66-73080665fb7b.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">IT Security</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-3xl font-bold mb-6 text-center">Our Training Programs</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <img src="https://source.unsplash.com/800x600/?security-training" alt="Security Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <h4 class="text-xl font-semibold mb-2">Comprehensive Security Training</h4>
+                    <p class="text-gray-700 text-center">Our programs equip security personnel with the skills needed for top-notch protection and risk management.</p>
                 </div>
-            </div>
-            <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('images/fingerprint-2904774_1280.jpg') }}" alt="Service Image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">Data Protection</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
+                <div class="flex flex-col items-center">
+                    <img src="https://source.unsplash.com/800x600/?tactical-training" alt="Tactical Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <h4 class="text-xl font-semibold mb-2">Tactical Training</h4>
+                    <p class="text-gray-700 text-center">Specialized training for tactical operations, including SWAT and special unit tactics, for high-stakes situations.</p>
                 </div>
-            </div>
-            <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('images/kidnapping.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">Risk Analysis</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
-                </div>
-            </div>
-            <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
-                <img src="{{ asset('images/defense.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">Physical Security</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
-                </div>
-            </div>
-            <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
-                <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Service Image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">Security Training</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="{{ url('/securitytraining') }}" class="text-teal-500 hover:underline">Learn More</a>
-                </div>
-            </div>
-            <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
-                <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Service Image" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold mb-4">Surveillance Systems</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
+                <div class="flex flex-col items-center">
+                    <img src="https://source.unsplash.com/800x600/?sniper-training" alt="Sniper Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <h4 class="text-xl font-semibold mb-2">Sniper Training</h4>
+                    <p class="text-gray-700 text-center">Intensive sniper training programs for precision and accuracy, essential for high-stakes operations.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="footer-distributed bg-gray-800 text-white py-6">
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+            <h3 class="text-3xl font-bold mb-6 text-center">Detailed Training Programs</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6">
+                <li><strong>SWAT Course (Sw56)</strong> - Eight weeks, designed for special units and police units.</li>
+                <li><strong>Special Tactics Units Training (sp28)</strong> - Four weeks, designed for special units and police units.</li>
+                <li><strong>Snipers Course (S14)</strong> - Two weeks, designed for special units, police units, security units, and army units.</li>
+                <li><strong>Refresher Snipers Course (S5)</strong> - Five days, designed for advanced snipers.</li>
+                <li><strong>Combat Rappelling Course – "Monkeys" (Sn14)</strong> - Two weeks, designed for combat with rappelling.</li>
+                <li><strong>Refresher Combat Rappelling Course – "Monkeys" (Sn5)</strong> - Five days, designed for combat with rappelling.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-800 text-white py-6">
     <div class="container mx-auto px-6">
         <div class="flex flex-wrap justify-between">
             <div class="w-full md:w-1/3 mb-6 md:mb-0">
                 <h3 class="text-2xl font-bold mb-4">Global<span class="text-teal-500">Security</span></h3>
                 <p class="footer-links flex flex-col space-y-2">
-                    <a href="{{ url('/') }}" class="hover:text-gray-400">Home</a>
-                    <a href="{{ url('/about') }}" class="hover:text-gray-400">About</a>
-                    <a href="{{ url('/services') }}" class="hover:text-gray-400">Services</a>
-                    <a href="{{ url('/contact') }}" class="hover:text-gray-400">Contact</a>
+                    <a href="index.html" class="hover:text-gray-400">Home</a>
+                    <a href="about.html" class="hover:text-gray-400">About</a>
+                    <a href="services.html" class="hover:text-gray-400">Services</a>
+                    <a href="contact.html" class="hover:text-gray-400">Contact</a>
                 </p>
                 <p class="text-gray-400 mt-4">Global Security AHS ©️ 2007</p>
             </div>
@@ -215,13 +193,13 @@
                 <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="{{ asset('images/facebook.jpeg') }}" alt="Facebook Icon" class="w-8 h-8">
+                        <img src="images/facebook.jpeg" alt="Facebook Icon" class="w-8 h-8">
                     </a>
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="{{ asset('images/instagram.jpeg') }}" alt="Instagram Icon" class="w-8 h-8">
+                        <img src="images/instagram.jpeg" alt="Instagram Icon" class="w-8 h-8">
                     </a>
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="{{ asset('images/linkedin.jpeg') }}" alt="LinkedIn Icon" class="w-8 h-8">
+                        <img src="images/linkedin.jpeg" alt="LinkedIn Icon" class="w-8 h-8">
                     </a>
                 </div>
             </div>
@@ -230,8 +208,8 @@
 </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        window.addEventListener("scroll", function () {
+    document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("scroll", function() {
             var nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
@@ -241,7 +219,7 @@
 
             // Check for elements to animate on scroll
             var elementsToShow = document.querySelectorAll('.fade-in');
-            elementsToShow.forEach(function (element) {
+            elementsToShow.forEach(function(element) {
                 if (isElementInViewport(element)) {
                     element.classList.add('visible');
                 }

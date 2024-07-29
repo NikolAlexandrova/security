@@ -22,6 +22,10 @@ Route::get('/faq', function () {
 return view('faq');
 });
 
+Route::get('/securitytraining', function () {
+    return view('securitytraining');
+});
+
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 

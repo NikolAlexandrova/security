@@ -42,11 +42,17 @@
             display: block;
             width: 40px;
             height: 40px;
+            color: black;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            transition: background 0.3s ease;
+            font-size: 24px;
         }
 
-        .social-icons img {
-            width: 100%;
-            height: 100%;
+        .social-icons a:hover {
+            background: rgba(0, 0, 0, 0.1);
         }
 
         .active-link {
@@ -90,6 +96,8 @@
             transform: translateX(0);
         }
     </style>
+    <!-- Use Font Awesome from an alternative CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="font-sans bg-white">
@@ -140,13 +148,16 @@
             <div class="overlay-text">
                 <h1 class="text-5xl md:text-6xl font-bold mb-4">Global Security Advising</h1>
                 <h1 class="text-5xl md:text-6xl font-bold mb-4">Homeland Solutions</h1>
-                <p class="text-xl md:text-2xl mb-8">Your compelling message goes here.</p>
+                <p class="text-xl md:text-2xl mb-8">
+                    <span class="font-bold">Your</span> Security, <span class="font-bold">Our</span> Priority
+                </p>
+
             </div>
         </div>
         <div class="social-icons">
-            <a href="#"><img src="{{ asset('images/facebook.jpeg') }}" alt="Facebook"></a>
-            <a href="#"><img src="{{ asset('images/instagram.jpeg') }}" alt="Instagram"></a>
-            <a href="#"><img src="{{ asset('images/linkedin.jpeg') }}" alt="LinkedIn"></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <a class="prev absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-2xl font-bold cursor-pointer z-20" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-2xl font-bold cursor-pointer z-20" onclick="plusSlides(1)">&#10095;</a>
@@ -157,7 +168,7 @@
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
         <div class="about-content md:w-1/2 mb-8 md:mb-0 md:pr-12">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">About Us</h2>
-            <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <p class="text-gray-700 mb-4">Global Security AHS, founded in 2007 by Israeli security experts, operates throughout Latin America with offices in the Dominican Republic and the U.S. The company specializes in tailored physical security solutions for sensitive facilities and events, leveraging extensive experience from Israel's intelligence units to meet the unique needs of each client. They focus on integrating security seamlessly into business environments to enhance efficiency and standards.</p>
             <a href="{{ url('/about') }}" class="bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300">Learn More</a>
         </div>
         <div class="about-image md:w-1/2 slide-in-from-right visible">
@@ -169,7 +180,7 @@
 <section class="help-section py-12">
     <div class="container mx-auto text-center px-6 md:px-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">How We Can Help You</h2>
-        <p class="text-gray-700 mb-8">Our services Our physical security services include: Security study Loss prevention Risk analysis Gap Analysis Master planning Security details design Safety training Control and audit Implementation. Our physical security group plans and manages the protection of sensitive facilities and events around the world, from airports to power plants and from hotels to individual office buildings.</p>
+        <p class="text-gray-700 mb-8">At Global Security AHS, we provide tailored security solutions for your unique needs. Our experts specialize in safeguarding facilities and events, offering services like risk assessments, security planning, and on-site management. Whether protecting airports, power plants, hotels, or offices, we ensure top-tier security with a proactive, integrated approach. Our strategies enhance your business operations and provide peace of mind, allowing your business to thrive securely.</p>
 
         <div class="image-gallery grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div class="hover-card rounded-lg shadow-lg overflow-hidden">
@@ -221,13 +232,13 @@
                 <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="{{ asset('images/facebook.jpeg') }}" alt="Facebook Icon" class="w-8 h-8">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="{{ asset('images/instagram.jpeg') }}" alt="Instagram Icon" class="w-8 h-8">
+                        <i class="fab fa-instagram"></i>
                     </a>
                     <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="{{ asset('images/linkedin.jpeg') }}" alt="LinkedIn Icon" class="w-8 h-8">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
@@ -302,7 +313,6 @@
         );
     }
 </script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 
 </html>

@@ -149,23 +149,31 @@
 
 <section class="bg-white py-12">
     <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-12">
-        <div class="lg:w-1/2 relative mb-8 lg:mb-0 overflow-hidden rounded-lg shadow-lg hover-card fade-in-box" style="animation-delay: 0.2s;">
+        <div class="lg:w-1/2 relative mb-8 lg:mb-0 overflow-hidden rounded-lg shadow-lg hover-card fade-in-box" style="animation-delay: 0.2s; margin-left: -10px;">
             <div class="rounded-lg overflow-hidden">
-                <img src="{{ asset('images/defense.jpeg') }}" alt="Person Image" class="w-full transition duration-300 ease-in-out transform hover:scale-110">
+                <img src="{{ asset('images/security about.jpeg') }}" alt="Person Image" class="w-full lg:w-full transition duration-300 ease-in-out transform hover:scale-110" style="width: 105%;">
             </div>
             <div class="absolute top-0 left-0 bg-gradient-to-b from-transparent to-black w-full h-full opacity-50 transition duration-300 ease-in-out"></div>
             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center transition duration-300 ease-in-out opacity-0 hover:opacity-100">
                 <h2 class="title text-white text-center">Meet John Doe</h2>
             </div>
         </div>
-        <div class="lg:w-2/3 lg:pl-20 fade-in-box" style="animation-delay: 0.4s;">
+
+        <div class="lg:w-2/3 lg:pl-10 fade-in-box" style="animation-delay: 0.4s;">
             <div class="text-container bg-white rounded-lg p-6 lg:p-8 card-shadow">
-                <h2 class="title">Title</h2>
-                <p class="text-gray-800 leading-relaxed">John Doe is an esteemed figure in the realm of security, boasting an illustrious career spanning more than a decade. With a proven track record of success, John has navigated the complexities of the security landscape with finesse and precision. Throughout his tenure, he has spearheaded a myriad of high-stakes endeavors, deploying innovative strategies to mitigate risks and safeguard assets.</p>
-                <p class="text-gray-800 leading-relaxed mt-4">Renowned for his unwavering commitment to excellence, John approaches each project with meticulous attention to detail and an unwavering dedication to achieving optimal outcomes. His expertise extends beyond traditional security paradigms, encompassing a holistic understanding of emerging threats and vulnerabilities.</p>
-                <p class="text-gray-800 leading-relaxed mt-4">A consummate professional, John is revered for his ability to forge strong relationships with clients, earning their trust through transparent communication and proactive problem-solving. His innate ability to anticipate challenges and devise effective solutions has earned him accolades within the industry, positioning him as a trusted advisor and confidant to businesses of all sizes.</p>
+                <p class="text-gray-800 leading-relaxed"><strong>Who We Are</strong><br>
+                    Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the State of Israel. Global Security AHS, with its offices in the Dominican Republic and the U.S., operates throughout Latin America. Its experts, in addition to years in the security service of the State of Israel, have extensive international experience in the civil context, adapting solutions to the specific needs of each client.
+                </p>
+                <p class="text-gray-800 leading-relaxed mt-4"><strong>Physical Security</strong><br>
+                    Our physical security group plans and manages the protection of sensitive facilities and events around the world, from airports to power plants and from hotels to individual office buildings.
+                </p>
+                <p class="text-gray-800 leading-relaxed mt-4"><strong>Our Methodology</strong><br>
+                    We view security as a business enabler and help create security environments that support our clients' unique businesses, needs, and cultures. Our process begins with the maintenance of the business and the functional continuity of the same, maintaining proactive and integrated. By incorporating planning and design into physical security designs and procedures, we create enhanced, easy-to-use security that maximizes efficiency and improves standards.
+                </p>
             </div>
         </div>
+
+    </div>
     </div>
 </section>
 
@@ -182,11 +190,14 @@
 <div class="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.2s;">
         <h2 class="subtitle">Our Mission</h2>
-        <p class="text-gray-700">At GSAHS, our mission is to ensure the safety and security of your operations, assets, and people. We believe that a secure environment is the foundation of any successful enterprise, and we are dedicated to providing advanced security solutions that safeguard against today’s ever-evolving threats. Our team of highly trained professionals brings decades of experience in intelligence, counter-terrorism, and security operations to the table, enabling us to handle complex security challenges with unmatched expertise.</p>
+        <p class="text-gray-700">Our mission is to achieve a safe and reliable environment for our customers, with minimal interference in their daily lives, but ensuring maximum control of their security structures. Likewise, optimize the cost-benefit formula, develop and implement systems appropriate to real needs and verify their proper functioning. All this while guaranteeing an associated security structure, discreet, but which offers convincing results</p>
     </div>
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.4s;">
         <h2 class="subtitle">Our Vision</h2>
-        <p class="text-gray-700">Our vision is to be the world's leading provider of strategic security solutions, recognized for our unwavering integrity, innovative approaches, and enduring commitment to our clients' safety. We aim to continuously evolve our services to stay ahead of global security trends and to provide peace of mind in an uncertain world.</p>
+        <p class="text-gray-700">We have a different way of seeing things and approaching everyday life. We cannot invent what already exists, but we can see it in the right way, and break away from classic, often obsolete frameworks.
+            Everything you know and already know can be improved and readjusted to your real needs.
+            We want to provide our customers with ongoing safety and security solutions, support and advice. In all areas. In all situations. Providing you with a range of responses to deal with unknown events, unforeseen events, emergencies and crises, both personal, group and corporate.
+        </p>
     </div>
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.6s;">
         <h2 class="subtitle">Our Values</h2>
