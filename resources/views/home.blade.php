@@ -95,6 +95,31 @@
             opacity: 1;
             transform: translateX(0);
         }
+
+        .modern-button {
+            background: linear-gradient(90deg, #6b6c4d, #8b8c6d);
+            padding: 14px 28px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .modern-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+            background: linear-gradient(90deg, #8b8c6d, #6b6c4d);
+        }
+
+        .divider {
+            margin: 20px 0;
+            border-top: 3px solid white;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
     <!-- Use Font Awesome from an alternative CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -151,7 +176,8 @@
                 <p class="text-xl md:text-2xl mb-8">
                     <span class="font-bold">Your</span> Security, <span class="font-bold">Our</span> Priority
                 </p>
-
+                <div class="divider"></div>
+                <a href="{{ url('/contact') }}" class="modern-button">Get in Touch</a>
             </div>
         </div>
         <div class="social-icons">
@@ -169,7 +195,8 @@
         <div class="about-content md:w-1/2 mb-8 md:mb-0 md:pr-12">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">About Us</h2>
             <p class="text-gray-700 mb-4">Global Security AHS, founded in 2007 by Israeli security experts, operates throughout Latin America with offices in the Dominican Republic and the U.S. The company specializes in tailored physical security solutions for sensitive facilities and events, leveraging extensive experience from Israel's intelligence units to meet the unique needs of each client. They focus on integrating security seamlessly into business environments to enhance efficiency and standards.</p>
-            <a href="{{ url('/about') }}" class="bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300">Learn More</a>
+            <div class="divider"></div>
+            <a href="{{ url('/about') }}" class="modern-button">Learn More</a>
         </div>
         <div class="about-image md:w-1/2 slide-in-from-right visible">
             <img src="{{ asset('images/1e5b30d4-2bf2-4eba-b780-88080e827c6a.jpeg') }}" alt="About Us Image" class="rounded-lg shadow-lg">
@@ -194,7 +221,8 @@
             </div>
         </div>
 
-        <a href="{{ url('/contact') }}" class="bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300">Learn More</a>
+        <div class="divider"></div>
+        <a href="{{ url('/contact') }}" class="modern-button">Learn More</a>
     </div>
 </section>
 

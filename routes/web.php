@@ -25,6 +25,9 @@ return view('faq');
 Route::get('/securitytraining', function () {
     return view('securitytraining');
 });
+Route::get('/physicalsecurity', function () {
+    return view('physicalsecurity');
+});
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 

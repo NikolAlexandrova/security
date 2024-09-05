@@ -7,30 +7,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Security Training</title>
     <style>
-        .scrolled {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
         .scrolled .logo img {
             width: 80px;
-        }
-
-        .active-link {
-            color: darkblue;
-            position: relative;
-            font-weight: 600;
-        }
-
-        .active-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: black;
-            bottom: -2px;
-            left: 0;
-            animation: slideIn 0.3s forwards;
         }
 
         @keyframes slideIn {
@@ -67,6 +45,25 @@
 
         .text-outline {
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .accordion-button::after {
+            content: '\002B';
+            font-size: 1.5rem;
+            float: right;
+        }
+
+        .accordion-button.active::after {
+            content: '\2212';
+        }
+
+        .accordion-button {
+            background-color: #6b6c4d;
+            color: white;
+        }
+
+        .accordion-button:hover {
+            background-color: #8c8d69; /* Lighter green color for hover */
         }
     </style>
 </head>
@@ -147,14 +144,53 @@
     <div class="container mx-auto px-6 md:px-12">
         <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
             <h3 class="text-3xl font-bold mb-6 text-center">Detailed Training Programs</h3>
-            <ul class="list-disc list-inside text-gray-700 mb-6">
-                <li><strong>SWAT Course (Sw56)</strong> - Eight weeks, designed for special units and police units.</li>
-                <li><strong>Special Tactics Units Training (sp28)</strong> - Four weeks, designed for special units and police units.</li>
-                <li><strong>Snipers Course (S14)</strong> - Two weeks, designed for special units, police units, security units, and army units.</li>
-                <li><strong>Refresher Snipers Course (S5)</strong> - Five days, designed for advanced snipers.</li>
-                <li><strong>Combat Rappelling Course – "Monkeys" (Sn14)</strong> - Two weeks, designed for combat with rappelling.</li>
-                <li><strong>Refresher Combat Rappelling Course – "Monkeys" (Sn5)</strong> - Five days, designed for combat with rappelling.</li>
-            </ul>
+            <button class="accordion-button w-full text-left py-4 px-6 bg-[#6b6c4d] hover:bg-[#8c8d69] text-white rounded-t-lg mb-2">SWAT Course (Sw56)</button>
+            <div class="accordion-panel hidden bg-white p-4 rounded-b-lg mb-4">
+                <p><strong>Course duration</strong> – Eight weeks</p>
+                <p><strong>Purpose</strong> – training for all special units</p>
+                <p><strong>Designed</strong> – special units, police units</p>
+                <p><strong>Application Requirements</strong> – Passage and approval testing, Success in physical exams.</p>
+            </div>
+
+            <button class="accordion-button w-full text-left py-4 px-6 bg-[#6b6c4d] hover:bg-[#8c8d69] text-white rounded-t-lg mb-2">Special Tactics Units Training (sp28)</button>
+            <div class="accordion-panel hidden bg-white p-4 rounded-b-lg mb-4">
+                <p><strong>Course duration</strong> – Four weeks</p>
+                <p><strong>Purpose</strong> – training for all police units</p>
+                <p><strong>Designed</strong> – special units, police units</p>
+                <p><strong>Application Requirements</strong> – Passage and approval testing, Success in physical exams.</p>
+            </div>
+
+            <button class="accordion-button w-full text-left py-4 px-6 bg-[#6b6c4d] hover:bg-[#8c8d69] text-white rounded-t-lg mb-2">Snipers Course (S14)</button>
+            <div class="accordion-panel hidden bg-white p-4 rounded-b-lg mb-4">
+                <p><strong>Course duration</strong> – Two weeks</p>
+                <p><strong>Purpose</strong> – training for snipers</p>
+                <p><strong>Designed</strong> – special units, police units, security units, army units.</p>
+                <p><strong>Application Requirements</strong> – Passage and approval testing, Success in physical exams.</p>
+            </div>
+
+            <button class="accordion-button w-full text-left py-4 px-6 bg-[#6b6c4d] hover:bg-[#8c8d69] text-white rounded-t-lg mb-2">Refresher Snipers Course (S5)</button>
+            <div class="accordion-panel hidden bg-white p-4 rounded-b-lg mb-4">
+                <p><strong>Course duration</strong> – Five days</p>
+                <p><strong>Purpose</strong> – training for advanced snipers</p>
+                <p><strong>Designed</strong> – special units, police units, security units, army units.</p>
+                <p><strong>Application Requirements</strong> – Passage and approval testing, Success in physical exams.</p>
+            </div>
+
+            <button class="accordion-button w-full text-left py-4 px-6 bg-[#6b6c4d] hover:bg-[#8c8d69] text-white rounded-t-lg mb-2">Combat Rappelling Course – "Monkeys" (Sn14)</button>
+            <div class="accordion-panel hidden bg-white p-4 rounded-b-lg mb-4">
+                <p><strong>Course duration</strong> – Two weeks</p>
+                <p><strong>Purpose</strong> – training for combat with rappelling</p>
+                <p><strong>Designed</strong> – special units, police units</p>
+                <p><strong>Application Requirements</strong> – Passage and approval testing, Success in physical exams.</p>
+            </div>
+
+            <button class="accordion-button w-full text-left py-4 px-6 bg-[#6b6c4d] hover:bg-[#8c8d69] text-white rounded-t-lg mb-2">Refresher Combat Rappelling Course – "Monkeys" (Sn5)</button>
+            <div class="accordion-panel hidden bg-white p-4 rounded-b-lg mb-4">
+                <p><strong>Course duration</strong> – Five days</p>
+                <p><strong>Purpose</strong> – training for combat with rappelling</p>
+                <p><strong>Designed</strong> – special units, police units</p>
+                <p><strong>Application Requirements</strong> – Passage and approval testing, Success in physical exams.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -240,6 +276,18 @@
                 link.classList.add('active-link');
             }
         });
+
+        // Accordion functionality
+        var acc = document.getElementsByClassName("accordion-button");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                panel.classList.toggle("hidden");
+            });
+        }
     });
 
     function isElementInViewport(el) {

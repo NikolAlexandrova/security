@@ -158,7 +158,7 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Physical Security</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="text-teal-500 hover:underline">Learn More</a>
+                    <a href="{{ url('/physicalsecurity') }}" class="text-teal-500 hover:underline">Learn More</a>
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
