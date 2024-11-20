@@ -106,10 +106,26 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        /* Contact Button Styles */
+        .contact-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
 <body class="font-sans bg-gray-50">
+<!-- Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-white shadow-md">
     <div class="flex justify-between items-center py-4 px-6">
         <div class="logo">
@@ -122,17 +138,17 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 items-center">
             <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
             <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
-            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
         <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
-        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
         <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
         <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
         <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
@@ -172,8 +188,6 @@
                 </p>
             </div>
         </div>
-
-    </div>
     </div>
 </section>
 
@@ -190,34 +204,15 @@
 <div class="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.2s;">
         <h2 class="subtitle">Our Mission</h2>
-        <p class="text-gray-700">Our mission is to achieve a safe and reliable environment for our customers, with minimal interference in their daily lives, but ensuring maximum control of their security structures. Likewise, optimize the cost-benefit formula, develop and implement systems appropriate to real needs and verify their proper functioning. All this while guaranteeing an associated security structure, discreet, but which offers convincing results</p>
+        <p class="text-gray-700">Our mission is to achieve a safe and reliable environment for our customers, with minimal interference in their daily lives, but ensuring maximum control of their security structures...</p>
     </div>
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.4s;">
         <h2 class="subtitle">Our Vision</h2>
-        <p class="text-gray-700">We have a different way of seeing things and approaching everyday life. We cannot invent what already exists, but we can see it in the right way, and break away from classic, often obsolete frameworks.
-            Everything you know and already know can be improved and readjusted to your real needs.
-            We want to provide our customers with ongoing safety and security solutions, support and advice. In all areas. In all situations. Providing you with a range of responses to deal with unknown events, unforeseen events, emergencies and crises, both personal, group and corporate.
-        </p>
+        <p class="text-gray-700">We have a different way of seeing things and approaching everyday life. We cannot invent what already exists, but we can see it in the right way, and break away from classic, often obsolete frameworks...</p>
     </div>
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.6s;">
         <h2 class="subtitle">Our Values</h2>
-        <p class="text-gray-700">Integrity and Confidentiality: At the heart of our operations lies a staunch commitment to ethical conduct and maintaining the confidentiality of our clients. Reliability: We pride ourselves on the consistency and dependability of our services, ensuring you can rely on us when it matters most. Proactivity: Our proactive approach in assessing threats and planning accordingly ensures that we stay ahead of risks, providing security that is as dynamic as the world around us.</p>
-    </div>
-</div>
-
-<!-- Additional Sections -->
-<div class="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.8s;">
-        <h2 class="subtitle">Quality Assurance</h2>
-        <p class="text-gray-700">We guarantee high standards in all our services, ensuring reliability and efficiency.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 1s;">
-        <h2 class="subtitle">Client Focus</h2>
-        <p class="text-gray-700">We are committed to meeting the specific needs of our clients, ensuring their utmost satisfaction.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 1.2s;">
-        <h2 class="subtitle">Innovation</h2>
-        <p class="text-gray-700">We embrace innovation, continuously seeking out new ways to enhance security and service delivery.</p>
+        <p class="text-gray-700">Integrity and Confidentiality: At the heart of our operations lies a staunch commitment to ethical conduct and maintaining the confidentiality of our clients...</p>
     </div>
 </div>
 

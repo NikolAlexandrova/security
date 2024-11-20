@@ -100,12 +100,34 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .parallax {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Contact Button Styles */
+        .contact-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
     </style>
 </head>
 
 <body class="font-sans bg-gray-100">
 
-<nav class="fixed top-0 w-full z-50 bg-white shadow">
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
     <div class="flex justify-between items-center py-4 px-6">
         <div class="logo">
             <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
@@ -117,20 +139,20 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 items-center">
             <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
             <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
-            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
         <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
-        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
-        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
-        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
-        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
+        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
+        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
     </div>
 </nav>
 
@@ -151,7 +173,9 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">IT Security</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="modern-button">Learn More</a>
+
+                    <a href="{{ url('/itsecurity') }}" class="text-teal-500 hover:underline">Learn More</a>
+
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
@@ -159,7 +183,9 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Data Protection</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="modern-button">Learn More</a>
+
+                    <a href="{{ url('/dataprotection') }}" class="text-teal-500 hover:underline">Learn More</a>
+
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
@@ -167,7 +193,9 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Risk Analysis</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="#" class="modern-button">Learn More</a>
+
+                    <a href="{{ url('/riskanalysis') }}" class="text-teal-500 hover:underline">Learn More</a>
+
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">

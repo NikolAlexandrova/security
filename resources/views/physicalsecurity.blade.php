@@ -84,15 +84,29 @@
         .arrow-right {
             right: 0;
         }
+        /* Contact Button Styles */
+        .contact-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
     </style>
 </head>
 
 <body class="font-sans bg-gray-100">
 
-<nav class="fixed top-0 w-full z-50 bg-white shadow transition-transform duration-300 ease-in-out">
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
     <div class="flex justify-between items-center py-4 px-6">
         <div class="logo">
-            <img src="images/security_logo-removebg-preview.png" alt="Your Logo" class="w-24 transition-all duration-300">
+            <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
         </div>
         <div class="md:hidden">
             <button id="menu-toggle" class="text-gray-800 focus:outline-none">
@@ -101,12 +115,12 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden md:flex space-x-4">
-            <a href="{{ url('/') }}" class="relative text-gray-800 hover:text-gray-600 nav-link">Home</a>
-            <a href="{{ url('/about') }}" class="relative text-gray-800 hover:text-gray-600 nav-link">About</a>
-            <a href="{{ url('/services') }}" class="relative text-gray-800 hover:text-gray-600 nav-link">Services</a>
-            <a href="{{ url('/contact') }}" class="relative text-gray-800 hover:text-gray-600 nav-link">Contact Us</a>
-            <a href="{{ url('/faq') }}" class="relative text-gray-800 hover:text-gray-600 nav-link">FAQ</a>
+        <div class="hidden md:flex space-x-4 items-center">
+            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
+            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
         </div>
     </div>
     <!-- Mobile Menu -->
