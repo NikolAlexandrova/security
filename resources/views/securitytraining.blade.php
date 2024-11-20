@@ -121,17 +121,17 @@
             <h3 class="text-3xl font-bold mb-6 text-center">Our Training Programs</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="flex flex-col items-center">
-                    <img src="https://source.unsplash.com/800x600/?security-training" alt="Security Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <img src="{{ asset('images/84e42356-6fac-4dc5-a127-c78d768bb2d8.jpg') }}" alt="Security Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
                     <h4 class="text-xl font-semibold mb-2">Comprehensive Security Training</h4>
                     <p class="text-gray-700 text-center">Our programs equip security personnel with the skills needed for top-notch protection and risk management.</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="https://source.unsplash.com/800x600/?tactical-training" alt="Tactical Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Tactical Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
                     <h4 class="text-xl font-semibold mb-2">Tactical Training</h4>
                     <p class="text-gray-700 text-center">Specialized training for tactical operations, including SWAT and special unit tactics, for high-stakes situations.</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="https://source.unsplash.com/800x600/?sniper-training" alt="Sniper Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <img src="{{ asset('images/6712c3ca-de7e-4c62-8c66-73080665fb7b.jpeg') }}" alt="Sniper Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
                     <h4 class="text-xl font-semibold mb-2">Sniper Training</h4>
                     <p class="text-gray-700 text-center">Intensive sniper training programs for precision and accuracy, essential for high-stakes operations.</p>
                 </div>

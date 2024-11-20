@@ -42,8 +42,9 @@
         }
 
         .logo-item img {
-            max-width: 200px; /* Increased logo size */
-            height: auto;
+            width: 200px; /* Increased width */
+            height: 200px; /* Increased height */
+            object-fit: contain; /* Ensures images maintain their aspect ratio */
         }
 
         .services-container {
@@ -108,7 +109,8 @@
             <a href="{{ url('/faq') }}" class="relative text-gray-800 hover:text-gray-600 nav-link">FAQ</a>
         </div>
     </div>
-    <div id="menu" class="hidden md:hidden">
+    <!-- Mobile Menu -->
+    <div id="menu" class="hidden md:hidden bg-white shadow-md">
         <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
         <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
         <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
@@ -116,6 +118,8 @@
         <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
     </div>
 </nav>
+
+
 
 <section class="relative h-[70vh] parallax bg-cover bg-center" style="background-image: url('Images/pexels-lukas-669283.jpg');">
     <div class="absolute inset-0 bg-black opacity-50"></div>
@@ -229,15 +233,15 @@
 
 <section class="py-16 bg-white">
     <div class="container mx-auto px-6 md:px-12 text-center">
-        <h2 class="text-3xl font-bold mb-8">Who do we provide our services for?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Who do we provide our services for?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-            <ul class="text-xl text-gray-700 list-disc list-inside space-y-2">
+            <ul class="text-xl md:text-2xl text-gray-700 list-disc list-inside space-y-2">
                 <li>Critical Infrastructure</li>
                 <li>Aviation</li>
                 <li>Governments</li>
                 <li>Hotels</li>
             </ul>
-            <ul class="text-xl text-gray-700 list-disc list-inside space-y-2">
+            <ul class="text-xl md:text-2xl text-gray-700 list-disc list-inside space-y-2">
                 <li>Schools / Universities</li>
                 <li>Protection VIP</li>
                 <li>Sport Events Protection</li>
@@ -246,23 +250,22 @@
     </div>
 </section>
 
+
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 md:px-12 text-center">
         <h3 class="text-3xl font-bold mb-12">Alliances</h3>
         <div class="scrolling-logos-wrapper">
             <div class="scrolling-logos flex space-x-12">
-                <!-- Use 'logo-item' for each logo block -->
                 <div class="logo-item"><img src="Images/MER_Group_logo.png" alt="MER Group"></div>
                 <div class="logo-item"><img src="Images/iafis.jpg" alt="IAFIS"></div>
                 <div class="logo-item"><img src="Images/orad.png" alt="ORAD"></div>
-                <div class="logo-item"><img src="Images/iai.png" alt="IAI"></div>
+                <div class="logo-item"><img src="Images/1578846.png" alt="IAI"></div>
                 <div class="logo-item"><img src="Images/integrity.png" alt="Integrity Meter"></div>
                 <div class="logo-item"><img src="Images/kazuar.png" alt="Benchmark"></div>
-                <!-- Repeating logos for scrolling effect -->
                 <div class="logo-item"><img src="Images/MER_Group_logo.png" alt="MER Group"></div>
                 <div class="logo-item"><img src="Images/iafis.jpg" alt="IAFIS"></div>
                 <div class="logo-item"><img src="Images/orad.png" alt="ORAD"></div>
-                <div class="logo-item"><img src="Images/iai.png" alt="IAI"></div>
+                <div class="logo-item"><img src="Images/1578846.png" alt="IAI"></div>
                 <div class="logo-item"><img src="Images/integrity.png" alt="Integrity Meter"></div>
                 <div class="logo-item"><img src="Images/kazuar.png" alt="Benchmark"></div>
             </div>
@@ -270,29 +273,34 @@
     </div>
 </section>
 
+
+
+
 <section class="py-16 bg-white">
     <div class="container mx-auto px-6 md:px-12 text-center">
-        <h3 class="text-3xl font-bold mb-6">Our Project Circle</h3>
-        <p class="text-gray-700 mb-8">Here's how we work with organizations to create a proactive security plan that covers all bases:</p>
-        <div class="flex flex-wrap justify-center">
-            <div class="w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center m-4">
-                <span>Assessment</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-6">Our Project Circle</h3>
+        <p class="text-gray-700 mb-8 text-lg md:text-xl">Here's how we work with organizations to create a proactive security plan that covers all bases:</p>
+        <div class="flex flex-col md:flex-row justify-center">
+            <div class="w-full md:w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center mb-4 md:m-4">
+                <span class="text-lg md:text-base">Assessment</span>
             </div>
-            <div class="w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center m-4">
-                <span>Consultant</span>
+            <div class="w-full md:w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center mb-4 md:m-4">
+                <span class="text-lg md:text-base">Consultant</span>
             </div>
-            <div class="w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center m-4">
-                <span>Investigations</span>
+            <div class="w-full md:w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center mb-4 md:m-4">
+                <span class="text-lg md:text-base">Investigations</span>
             </div>
-            <div class="w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center m-4">
-                <span>Training</span>
+            <div class="w-full md:w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center mb-4 md:m-4">
+                <span class="text-lg md:text-base">Training</span>
             </div>
-            <div class="w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center m-4">
-                <span>Operation</span>
+            <div class="w-full md:w-32 h-32 bg-[#6b6c4d] text-white rounded-full flex items-center justify-center mb-4 md:m-4">
+                <span class="text-lg md:text-base">Operation</span>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 md:px-12 text-center">
