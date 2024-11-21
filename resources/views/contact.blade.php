@@ -65,7 +65,31 @@
 
         .contact-button:hover {
             background-color: #1e8449;
-            transform: scale(1.05);
+            transform: scale(1.05);}
+        /* Modern button style (Home page color) */
+        .modern-button {
+            background: linear-gradient(90deg, #6b6c4d, #8b8c6d); /* Gradient color */
+            padding: 14px 28px; /* Default padding */
+            font-size: 1.25rem; /* Font size */
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .modern-button:hover {
+            transform: scale(1.1); /* Hover effect */
+            box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+            background: linear-gradient(90deg, #8b8c6d, #6b6c4d); /* Hover gradient */
+        }
+
+        /* Smaller button variant */
+        .small-button {
+            padding: 8px 16px; /* Reduced padding for smaller size */
+            font-size: 1rem; /* Smaller font size */
+            border-radius: 25px; /* Adjusted border radius */
+        }
     </style>
 </head>
 
@@ -91,9 +115,8 @@
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 transition duration-300 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
 
             <!-- Contact Us Button with color change on the contact page -->
-            <a href="{{ url('/contact') }}" class="contact-button text-white px-6 py-2 rounded-full font-bold transition duration-300 {{ Request::is('contact') ? 'bg-purple-600' : 'bg-gradient-to-r from-teal-500 to-green-600 hover:from-green-600 hover:to-teal-500' }}">
-                Contact Us
-            </a>
+            <a href="{{ url('/contact') }}" class="modern-button small-button">Contact Us</a>
+
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
@@ -183,7 +206,7 @@
                 <label for="message" class="block text-gray-700">Message <span class="text-red-500">*</span></label>
                 <textarea rows="6" placeholder="Your Message" id="message" name="message" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
             </div>
-            <button type="submit" class="w-full px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-700 transition duration-300">Send</button>
+            <button type="submit" class="modern-button w-full">Send</button>
         </form>
     </div>
 </div>
