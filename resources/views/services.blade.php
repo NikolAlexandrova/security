@@ -198,7 +198,7 @@
                 <img src="{{ asset('images/6712c3ca-de7e-4c62-8c66-73080665fb7b.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">IT Security</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                    <p class="text-gray-700 mb-4"> We provide comprehensive IT security solutions to protect digital assets, ensuring robust defense against cyber threats while maintaining business continuity</p>
 
                     <a href="{{ url('/itsecurity') }}" class="text-teal-500 hover:underline">Learn More</a>
 
@@ -208,7 +208,7 @@
                 <img src="{{ asset('images/fingerprint-2904774_1280.jpg') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Data Protection</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                    <p class="text-gray-700 mb-4">We offer tailored data protection services to safeguard sensitive information, ensuring compliance with regulations and mitigating risks of data breaches.</p>
 
                     <a href="{{ url('/dataprotection') }}" class="text-teal-500 hover:underline">Learn More</a>
 
@@ -218,7 +218,7 @@
                 <img src="{{ asset('images/kidnapping.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Risk Analysis</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                    <p class="text-gray-700 mb-4">We conduct risk analysis to identify vulnerabilities and assess potential threats, providing clients with strategic insights to enhance their security posture.</p>
 
                     <a href="{{ url('/riskanalysis') }}" class="text-teal-500 hover:underline">Learn More</a>
 
@@ -228,7 +228,7 @@
                 <img src="{{ asset('images/defense.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Physical Security</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                    <p class="text-gray-700 mb-4">We deliver customized physical security solutions to protect critical facilities and events, ensuring safety through proactive planning and advanced protective measures.</p>
                     <a href="{{ url('/physicalsecurity') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
@@ -236,7 +236,7 @@
                 <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Security Training</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                    <p class="text-gray-700 mb-4">We provide specialized security training programs designed to equip personnel with the skills and knowledge needed to effectively handle diverse security challenges.</p>
                     <a href="{{ url('/securitytraining') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
@@ -244,7 +244,7 @@
                 <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Surveillance Systems</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+                    <p class="text-gray-700 mb-4">We offer advanced surveillance services, utilizing cutting-edge technology to monitor and protect assets, ensuring real-time situational awareness and rapid response.</p>
                     <a href="{{ url('/surveillance') }}" class="modern-button">Learn More</a>
                 </div>
             </div>

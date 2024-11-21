@@ -269,7 +269,7 @@
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
         <div class="about-content md:w-1/2 mb-8 md:mb-0 md:pr-12">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">About Us</h2>
-            <p class="text-gray-700 mb-4">Global Security AHS, founded in 2007 by Israeli security experts, operates throughout Latin America with offices in the Dominican Republic and the U.S. The company specializes in tailored physical security solutions for sensitive facilities and events, leveraging extensive experience from Israel's intelligence units to meet the unique needs of each client. They focus on integrating security seamlessly into business environments to enhance efficiency and standards.</p>
+            <p class="text-gray-700 mb-4">Global Security AHS, founded in 2007 by Israeli security experts, operates throughout Latin America with offices in the Dominican Republic and the U.S. Our company specializes in tailored physical security solutions for sensitive facilities and events, leveraging extensive experience from Israel's intelligence units to meet the unique needs of each client. We focus on integrating security seamlessly into business environments to enhance efficiency and standards.</p>
             <div class="divider"></div>
             <a href="{{ url('/about') }}" class="modern-button">Learn More</a>
         </div>
