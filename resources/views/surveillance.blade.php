@@ -22,6 +22,22 @@
             width: 100%;
         }
     }
+    .modern-button {
+        background: linear-gradient(90deg, #6b6c4d, #8b8c6d);
+        padding: 10px 20px; /* Reduced padding */
+        font-size: 1rem; /* Reduced font size */
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+
+    .modern-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+        background: linear-gradient(90deg, #8b8c6d, #6b6c4d);
+    }
 
     .nav-link {
         position: relative;
@@ -122,28 +138,25 @@
             <!-- Service 1 -->
             <div class="bg-white bg-opacity-90 shadow-lg rounded-xl p-8 transform transition hover:scale-105">
                 <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1557401973-cd43e5691b60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fHN1cnZlaWxsYW5jZXxlbnwwfHx8fDE2MzA4MzQzNzI&ixlib=rb-1.2.1&q=80&w=400" alt="24/7 Monitoring" class="w-full h-56 object-cover rounded-t-lg">
+                    <img src="{{ asset('images/pexels-brett-sayles-20783671.jpg') }}" alt="24/7 Monitoring" class="w-full h-56 object-cover rounded-t-lg">
                     <h3 class="text-2xl font-bold text-[#6b6c4d] mt-4">24/7 Monitoring</h3>
                     <p class="mt-3 text-gray-500">Our continuous surveillance ensures that your property is monitored around the clock, providing immediate response in case of any incidents.</p>
-                    <a href="#" class="inline-block mt-4 text-[#6b6c4d] hover:underline">Learn More &rarr;</a>
                 </div>
             </div>
             <!-- Service 2 -->
             <div class="bg-white bg-opacity-90 shadow-lg rounded-xl p-8 transform transition hover:scale-105">
                 <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1521610320160-c0eab1f39b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGN2dHxlbnwwfHx8fDE2MzA4MzQ0MjI&ixlib=rb-1.2.1&q=80&w=400" alt="CCTV Installation" class="w-full h-56 object-cover rounded-t-lg">
+                    <img src="{{ asset('images/pexels-dom-j-7304-354062.jpg') }}" alt="CCTV Installation" class="w-full h-56 object-cover rounded-t-lg">
                     <h3 class="text-2xl font-bold text-[#6b6c4d] mt-4">CCTV Installation</h3>
                     <p class="mt-3 text-gray-500">We provide expert CCTV installation that ensures comprehensive coverage of your property with high-definition surveillance equipment.</p>
-                    <a href="#" class="inline-block mt-4 text-[#6b6c4d] hover:underline">Learn More &rarr;</a>
                 </div>
             </div>
             <!-- Service 3 -->
             <div class="bg-white bg-opacity-90 shadow-lg rounded-xl p-8 transform transition hover:scale-105">
                 <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1574121108275-187041f9355e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHJlbW90ZSUyMGFjY2Vzc3xlbnwwfHx8fDE2MzA4MzQ0NTQ&ixlib=rb-1.2.1&q=80&w=400" alt="Remote Access Systems" class="w-full h-56 object-cover rounded-t-lg">
+                    <img src="{{ asset('images/pexels-jakubzerdzicki-27662879.jpg') }}" alt="Remote Access Systems" class="w-full h-56 object-cover rounded-t-lg">
                     <h3 class="text-2xl font-bold text-[#6b6c4d] mt-4">Remote Access Systems</h3>
                     <p class="mt-3 text-gray-500">Monitor your property remotely from any device, anywhere, with real-time alerts and control over your security systems.</p>
-                    <a href="#" class="inline-block mt-4 text-[#6b6c4d] hover:underline">Learn More &rarr;</a>
                 </div>
             </div>
         </div>
@@ -222,7 +235,7 @@
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-5xl font-bold mb-6">Let Us Protect What Matters Most</h2>
         <p class="mb-8 max-w-2xl mx-auto">Contact Global Security AHS today to discuss how we can help secure your property with our advanced surveillance systems. Our experts are here to guide you every step of the way.</p>
-        <a href="contact.html" class="bg-[#6b6c4d] text-white py-3 px-8 rounded-full shadow-lg hover:bg-gray-700">Request a Free Consultation</a>
+        <a href="{{ url('/contact') }}" class="modern-button">Request a Free Consultation</a>
     </div>
 </section>
 

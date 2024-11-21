@@ -7,6 +7,23 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Our Services</title>
     <style>
+        .modern-button {
+            background: linear-gradient(90deg, #6b6c4d, #8b8c6d);
+            padding: 10px 20px; /* Reduced padding */
+            font-size: 1rem; /* Reduced font size */
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .modern-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+            background: linear-gradient(90deg, #8b8c6d, #6b6c4d);
+        }
+
         .hover-card:hover {
             transform: scale(1.05);
         }
@@ -182,7 +199,9 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">IT Security</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+
                     <a href="{{ url('/itsecurity') }}" class="text-teal-500 hover:underline">Learn More</a>
+
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
@@ -190,7 +209,9 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Data Protection</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+
                     <a href="{{ url('/dataprotection') }}" class="text-teal-500 hover:underline">Learn More</a>
+
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
@@ -198,7 +219,9 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Risk Analysis</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
+
                     <a href="{{ url('/riskanalysis') }}" class="text-teal-500 hover:underline">Learn More</a>
+
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
@@ -206,7 +229,7 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Physical Security</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="{{ url('/physicalsecurity') }}" class="text-teal-500 hover:underline">Learn More</a>
+                    <a href="{{ url('/physicalsecurity') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
@@ -214,7 +237,7 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Security Training</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="{{ url('/securitytraining') }}" class="text-teal-500 hover:underline">Learn More</a>
+                    <a href="{{ url('/securitytraining') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
@@ -222,12 +245,13 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Surveillance Systems</h3>
                     <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, leo nec faucibus aliquam.</p>
-                    <a href="{{ url('/surveillance') }}" class="text-teal-500 hover:underline">Learn More</a>
+                    <a href="{{ url('/surveillance') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <footer class="footer-distributed bg-gray-800 text-white py-6">
     <div class="container mx-auto px-6">
