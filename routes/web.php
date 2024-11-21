@@ -43,10 +43,7 @@ Route::get('/itsecurity', function () {
     return view('itsecurity');
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> eb7a3c5c0b35fe6df94cb5993a542e5129de82eb
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 
