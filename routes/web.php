@@ -28,6 +28,10 @@ Route::get('/securitytraining', function () {
 Route::get('/physicalsecurity', function () {
     return view('physicalsecurity');
 });
+Route::get('/surveillance', function () {
+    return view('surveillance');
+});
+
 Route::get('/dataprotection', function () {
     return view('dataprotection');
 });
@@ -37,6 +41,8 @@ Route::get('/riskanalysis', function () {
 Route::get('/itsecurity', function () {
     return view('itsecurity');
 });
+
+
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 
