@@ -177,6 +177,28 @@
     </div>
 </section>
 
+<!-- Video section -->
+<!-- Video Section -->
+<section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-6">Watch Our Introductory Video</h2>
+        <div class="flex justify-center">
+            <div class="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
+                <!-- Local Video with Subtitles -->
+                <video class="w-full rounded-lg" controls>
+                    <source src="{{ asset('videos/6d756dd7-6a04-4f7c-8b66-3bf3ad7bbec8.MP4') }}" type="video/mp4">
+                    <track src="{{ asset('videos/subtitles.vtt') }}" kind="subtitles" srclang="en" label="English">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 mt-4">Explore who we are and what we do through this engaging short video.</p>
+    </div>
+</section>
+
+
+
+
 <!-- Call to Action Section -->
 <section class="bg-[#404A66] text-white py-12">
     <div class="container mx-auto text-center px-6">
