@@ -113,6 +113,31 @@
         .contact-button:hover {
             background-color: #1e8449;
             transform: scale(1.05);
+        }
+        /* Modern button style (Home page color) */
+        .modern-button {
+            background: linear-gradient(90deg, #6b6c4d, #8b8c6d); /* Gradient color */
+            padding: 14px 28px; /* Default padding */
+            font-size: 1.25rem; /* Font size */
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .modern-button:hover {
+            transform: scale(1.1); /* Hover effect */
+            box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+            background: linear-gradient(90deg, #8b8c6d, #6b6c4d); /* Hover gradient */
+        }
+
+        /* Smaller button variant */
+        .small-button {
+            padding: 8px 16px; /* Reduced padding for smaller size */
+            font-size: 1rem; /* Smaller font size */
+            border-radius: 25px; /* Adjusted border radius */
+        }
     </style>
 </head>
 
@@ -142,6 +167,9 @@
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
             <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+
+            <a href="{{ url('/contact') }}" class="modern-button small-button">Contact Us</a>
+
         </div>
     </div>
 
@@ -225,7 +253,8 @@
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-4">Can't find your question?</h2>
         <p class="text-gray-600 mb-8">If you can't find your question in our FAQ, feel free to reach out to us.</p>
-        <a href="{{ url('/contact') }}" class="bg-blue-500 text-white px-6 py-3 rounded-lg">Contact Us</a>
+        <a href="{{ url('/contact') }}" class="modern-button small-button">Contact Us</a>
+
     </div>
 </section>
 
