@@ -85,17 +85,6 @@
             transition: width 0.3s;
         }
 
-        .slide-in-from-right {
-            opacity: 0;
-            transform: translateX(100%);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-        .slide-in-from-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
         .modern-button {
             background: linear-gradient(90deg, #6b6c4d, #8b8c6d);
             padding: 14px 28px;
@@ -113,6 +102,61 @@
             background: linear-gradient(90deg, #8b8c6d, #6b6c4d);
         }
 
+        /* Navbar Styling */
+        nav {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Active link indicator */
+        .active-link {
+            position: relative;
+            font-weight: 600;
+        }
+
+        .active-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            bottom: -2px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            bottom: -2px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        /* Contact Us Button */
+        .bg-gradient-to-r {
+            background: linear-gradient(90deg, rgba(13, 110, 253, 1) 0%, rgba(0, 191, 255, 1) 100%);
+        }
+
+        .bg-gradient-to-r:hover {
+            background: linear-gradient(90deg, rgba(0, 191, 255, 1) 0%, rgba(13, 110, 253, 1) 100%);
+        }
+
+        nav.scrolled a.nav-link {
+            color: black;
+        }
+
+        nav.scrolled .text-white {
+            color: white;
+        }
+
         .divider {
             margin: 20px 0;
             border-top: 3px solid white;
@@ -120,13 +164,35 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .parallax {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Contact Button Styles */
+        .contact-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
     </style>
-    <!-- Use Font Awesome from an alternative CDN -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="font-sans bg-white">
-<nav class="fixed top-0 w-full z-50 bg-white shadow">
+
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
     <div class="flex justify-between items-center py-4 px-6">
         <div class="logo">
             <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
@@ -138,12 +204,12 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 items-center">
             <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
             <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
-            <a href="{{ url('/contact') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
@@ -155,6 +221,16 @@
     </div>
 </nav>
 
+    <div id="menu" class="hidden md:hidden">
+        <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
+        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
+        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
+    </div>
+</nav>
+
+<!-- Slideshow Section -->
 <section class="main-section relative h-screen bg-cover bg-center">
     <div class="slideshow-container absolute inset-0">
         <div class="mySlides fade absolute inset-0">
@@ -180,16 +256,10 @@
                 <a href="{{ url('/contact') }}" class="modern-button">Get in Touch</a>
             </div>
         </div>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <a class="prev absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-2xl font-bold cursor-pointer z-20" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-2xl font-bold cursor-pointer z-20" onclick="plusSlides(1)">&#10095;</a>
     </div>
 </section>
 
+<!-- About Section -->
 <section class="about-section bg-gray-100 py-12" id="aboutSection">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
         <div class="about-content md:w-1/2 mb-8 md:mb-0 md:pr-12">
@@ -204,6 +274,7 @@
     </div>
 </section>
 
+<!-- Contact Form Section -->
 <section class="help-section py-12">
     <div class="container mx-auto text-center px-6 md:px-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">How We Can Help You</h2>
@@ -226,6 +297,7 @@
     </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer-distributed bg-gray-800 text-white py-6">
     <div class="container mx-auto px-6">
         <div class="flex flex-wrap justify-between">
@@ -274,6 +346,7 @@
     </div>
 </footer>
 
+<!-- JavaScript for Scroll and Navbar Effect -->
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -297,8 +370,8 @@
         slides[slideIndex - 1].style.display = "block";
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        window.addEventListener("scroll", function() {
+    document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("scroll", function () {
             var nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
@@ -308,14 +381,14 @@
 
             // Check for elements to animate on scroll
             var elementsToShow = document.querySelectorAll('.appear-on-scroll, .slide-in-from-right');
-            elementsToShow.forEach(function(element) {
+            elementsToShow.forEach(function (element) {
                 if (isElementInViewport(element)) {
                     element.classList.add('visible');
                 }
             });
         });
 
-        document.getElementById('menu-toggle').onclick = function() {
+        document.getElementById('menu-toggle').onclick = function () {
             var menu = document.getElementById('menu');
             menu.classList.toggle('hidden');
         };
@@ -341,6 +414,7 @@
         );
     }
 </script>
+
 </body>
 
 </html>

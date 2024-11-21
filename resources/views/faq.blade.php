@@ -92,11 +92,32 @@
         .text-teal-500 {
             color: #319795; /* You can change this to the exact green color you need */
         }
+        .parallax {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
+        /* Contact Button Styles */
+        .contact-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
     </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
+
 <nav class="fixed top-0 w-full z-50 bg-white shadow">
     <div class="flex justify-between items-center py-4 px-6">
         <!-- Logo -->
@@ -105,6 +126,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
+
         <div class="md:hidden">
             <button id="menu-toggle" class="text-gray-800 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -130,6 +152,7 @@
         <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
         <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('contact') ? 'active-link' : '' }}">Contact Us</a>
         <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+
     </div>
 </nav>
 

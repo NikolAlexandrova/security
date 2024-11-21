@@ -45,10 +45,32 @@
             padding-top: 6rem;
             padding-bottom: 6rem;
         }
+        .parallax {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Contact Button Styles */
+        .contact-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
     </style>
 </head>
 
 <body class="font-sans bg-gray-100">
+
 
 <nav class="fixed top-0 w-full z-50 bg-white shadow">
     <div class="flex justify-between items-center py-4 px-6">
@@ -85,6 +107,74 @@
         <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
     </div>
 </nav>
+
+
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
+    <div class="flex justify-between items-center py-4 px-6">
+        <div class="logo">
+            <img src="{{ asset('images/security_logo-removebg-preview.png') }}" alt="Your Logo" class="w-24">
+        </div>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden md:flex space-x-4 items-center">
+            <a href="{{ url('/') }}" class="nav-link text-gray-800 hover:text-gray-600 transition duration-300 {{ Request::is('/') ? 'active-link' : '' }}">Home</a>
+            <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 transition duration-300 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
+            <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 transition duration-300 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
+            <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 transition duration-300 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
+
+            <!-- Contact Us Button with color change on the contact page -->
+            <a href="{{ url('/contact') }}" class="contact-button text-white px-6 py-2 rounded-full font-bold transition duration-300 {{ Request::is('contact') ? 'bg-purple-600' : 'bg-gradient-to-r from-teal-500 to-green-600 hover:from-green-600 hover:to-teal-500' }}">
+                Contact Us
+            </a>
+        </div>
+    </div>
+    <div id="menu" class="hidden md:hidden">
+        <a href="{{ url('/') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
+        <a href="{{ url('/about') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+        <a href="{{ url('/services') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Services</a>
+        <a href="{{ url('/contact') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
+        <a href="{{ url('/faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">FAQ</a>
+    </div>
+</nav>
+
+<!-- Styles for Navbar and Contact Us Button -->
+<style>
+    /* Active link underline for regular links */
+    .active-link {
+        position: relative;
+        font-weight: 600;
+    }
+
+    .active-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        bottom: -2px;
+        left: 0;
+    }
+
+    /* Contact Us button with gradient and active color */
+    .contact-button {
+        background: linear-gradient(90deg, #38b2ac, #68d391);
+    }
+
+    .contact-button.active-link::after {
+        display: none;
+    }
+
+    /* On contact page, change button color to purple */
+    .bg-purple-600 {
+        background-color: #6b46c1 !important; /* Purple color when on contact page */
+    }
+</style>
 
 
 <section class="relative parallax-section" style="background-image: url('{{ asset('images/pexels-lukas-669283.jpg') }}');">
