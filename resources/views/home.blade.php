@@ -171,6 +171,11 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .small-button {
+            padding: 8px 16px; /* Smaller padding */
+            font-size: 1rem; /* Smaller font size */
+            border-radius: 25px; /* Adjust radius if needed */
+        }
 
         /* Contact Button Styles */
         .contact-button {
@@ -209,7 +214,7 @@
             <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
-            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
+            <a href="{{ url('/contact') }}" class="modern-button small-button">Contact Us</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
