@@ -69,7 +69,7 @@
 
         .arrow {
             position: absolute;
-            top: 50%;
+            top: 65%;
             transform: translateY(-50%);
             font-size: 2rem;
             color: #6b6c4d;
