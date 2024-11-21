@@ -227,7 +227,7 @@
 <div class="container mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.2s;">
         <h2 class="subtitle">Our Mission</h2>
-        <p class="text-gray-700">Our mission is to achieve a safe and reliable environment for our customers, with minimal interference in their daily lives, but ensuring maximum control of their security structures...</p>
+        <p class="text-gray-700">Our mission is to achieve a safe and reliable environment for our customers, with minimal interference in their daily lives, but ensuring maximum control of their security...</p>
     </div>
     <div class="bg-white p-6 rounded-lg shadow hover-card card-shadow fade-in-box" style="animation-delay: 0.4s;">
         <h2 class="subtitle">Our Vision</h2>

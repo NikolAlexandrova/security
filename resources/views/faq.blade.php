@@ -113,6 +113,7 @@
         .contact-button:hover {
             background-color: #1e8449;
             transform: scale(1.05);
+        }
     </style>
 </head>
 
@@ -180,27 +181,27 @@
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content bg-gray-50 rounded-lg px-6 py-4">
-                        <p class="text-gray-700">We offer a range of security services including but not limited to surveillance, personal security, and cyber security solutions.</p>
+                        <p class="text-gray-700">We offer services including physical security, IT security, data protection, risk analysis, security training, and surveillance to meet the unique needs of our clients.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-button w-full text-left py-4 px-6 bg-gray-100 rounded-lg shadow-md flex justify-between items-center">
-                        <span>How can I contact you?</span>
+                        <span>Where does Global Security AHS operate?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content bg-gray-50 rounded-lg px-6 py-4">
-                        <p class="text-gray-700">You can contact us via email at support@company.com or call us at +1.555.555.5555.</p>
+                        <p class="text-gray-700">We have offices in the Dominican Republic and the United States and operate throughout Latin America.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-button w-full text-left py-4 px-6 bg-gray-100 rounded-lg shadow-md flex justify-between items-center">
-                        <span>What are your operating hours?</span>
+                        <span>How does Global Security AHS ensure customized solutions for clients?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content bg-gray-50 rounded-lg px-6 py-4">
-                        <p class="text-gray-700">We operate 24/7 to ensure your security needs are always met.</p>
+                        <p class="text-gray-700">We adapt our security strategies based on each client's unique needs, business culture, and environment to deliver highly customized and effective solutions.</p>
                     </div>
                 </div>
 
