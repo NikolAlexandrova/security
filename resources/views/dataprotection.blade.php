@@ -141,19 +141,30 @@
         .best-practices-container ul {
             margin-top: 20px;
         }
-        /* Contact Button Styles */
-        .contact-button {
-            background-color: #27ae60;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
+        /* Modern button style (Home page color) */
+        .modern-button {
+            background: linear-gradient(90deg, #6b6c4d, #8b8c6d); /* Gradient color from Home page */
+            padding: 14px 28px; /* Original padding */
+            font-size: 1.25rem; /* Font size */
             font-weight: bold;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
         }
 
-        .contact-button:hover {
-            background-color: #1e8449;
-            transform: scale(1.05);
+        .modern-button:hover {
+            transform: scale(1.1); /* Hover effect */
+            box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+            background: linear-gradient(90deg, #8b8c6d, #6b6c4d); /* Hover color effect */
+        }
+
+        /* Smaller button variant */
+        .small-button {
+            padding: 8px 16px; /* Reduced padding for smaller size */
+            font-size: 1rem; /* Smaller font size */
+            border-radius: 25px; /* Adjusted border radius */
+        }
 
     </style>
 </head>
@@ -178,7 +189,7 @@
             <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
-            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
+            <a href="{{ url('/contact') }}" class="modern-button small-button">Contact Us</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
@@ -342,7 +353,7 @@
 
             <!-- Centered CTA Button -->
             <div class="text-center">
-                <a href="{{ url('/contact') }}" class="inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700">Interested in Data Protection? Contact Us</a>
+                <a href="{{ url('/contact') }}" class="modern-button">Interested in Data Protection? Contact Us</a>
             </div>
         </div>
     </div>
