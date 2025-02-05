@@ -83,7 +83,31 @@
 
         .contact-button:hover {
             background-color: #1e8449;
-            transform: scale(1.05);
+            transform: scale(1.05);}
+        /* Modern button style (Home page color) */
+        .modern-button {
+            background: linear-gradient(90deg, #6b6c4d, #8b8c6d); /* Gradient color from Home page */
+            padding: 14px 28px; /* Original padding */
+            font-size: 1.25rem; /* Font size */
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .modern-button:hover {
+            transform: scale(1.1); /* Hover effect */
+            box-shadow: 0 10px 20px rgba(107, 108, 77, 0.5);
+            background: linear-gradient(90deg, #8b8c6d, #6b6c4d); /* Hover color effect */
+        }
+
+        /* Smaller button variant */
+        .small-button {
+            padding: 8px 16px; /* Reduced padding for smaller size */
+            font-size: 1rem; /* Smaller font size */
+            border-radius: 25px; /* Adjusted border radius */
+        }
     </style>
 </head>
 
@@ -107,7 +131,7 @@
             <a href="{{ url('/about') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('about') ? 'active-link' : '' }}">About</a>
             <a href="{{ url('/services') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('services') ? 'active-link' : '' }}">Services</a>
             <a href="{{ url('/faq') }}" class="nav-link text-gray-800 hover:text-gray-600 {{ Request::is('faq') ? 'active-link' : '' }}">FAQ</a>
-            <a href="{{ url('/contact') }}" class="contact-button">Contact Us</a>
+            <a href="{{ url('/contact') }}" class="modern-button small-button">Contact Us</a>
         </div>
     </div>
     <div id="menu" class="hidden md:hidden">
@@ -203,8 +227,8 @@
 
 
 
-        <!-- Diagonal Divider at the bottom -->
-    <div class="absolute inset-x-0 bottom-0 -mb-12 h-12 bg-gray-100 clip-diagonal-flip"></div>
+<!-- Diagonal Divider at the bottom -->
+<div class="absolute inset-x-0 bottom-0 -mb-12 h-12 bg-gray-100 clip-diagonal-flip"></div>
 </section>
 
 <!-- Clip Path CSS for diagonal sections -->
@@ -346,6 +370,43 @@
     AOS.init({
         duration: 1000,
         once: true,
+    });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        var accButtons = document.querySelectorAll(".accordion-button");
+
+        accButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+        // Toggle active class
+        this.classList.toggle("active");
+
+        // Toggle the content
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+
+        // Rotate the icon
+        var icon = this.querySelector(".accordion-icon");
+        icon.textContent = icon.textContent === "+" ? "-" : "+";
+    });
+    });
+
+        document.getElementById('menu-toggle').onclick = function() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('hidden');
+    };
+        // Add active class to the current link
+        const currentLocation = window.location.href;
+        const menuItem = document.querySelectorAll('nav a');
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) {
+        menuItem[i].classList.add("active-link");
+    }
+    }
     });
 </script>
 

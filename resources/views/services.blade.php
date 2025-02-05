@@ -198,10 +198,8 @@
                 <img src="{{ asset('images/6712c3ca-de7e-4c62-8c66-73080665fb7b.jpeg') }}" alt="Service Image" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">IT Security</h3>
-                    <p class="text-gray-700 mb-4"> We provide comprehensive IT security solutions to protect digital assets, ensuring robust defense against cyber threats while maintaining business continuity</p>
-
-                    <a href="{{ url('/itsecurity') }}" class="text-teal-500 hover:underline">Learn More</a>
-
+                    <p class="text-gray-700 mb-4">We provide comprehensive IT security solutions to protect digital assets, ensuring robust defense against cyber threats while maintaining business continuity</p>
+                    <a href="{{ url('/itsecurity') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
@@ -209,9 +207,7 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Data Protection</h3>
                     <p class="text-gray-700 mb-4">We offer tailored data protection services to safeguard sensitive information, ensuring compliance with regulations and mitigating risks of data breaches.</p>
-
-                    <a href="{{ url('/dataprotection') }}" class="text-teal-500 hover:underline">Learn More</a>
-
+                    <a href="{{ url('/dataprotection') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden">
@@ -219,9 +215,7 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-4">Risk Analysis</h3>
                     <p class="text-gray-700 mb-4">We conduct risk analysis to identify vulnerabilities and assess potential threats, providing clients with strategic insights to enhance their security posture.</p>
-
-                    <a href="{{ url('/riskanalysis') }}" class="text-teal-500 hover:underline">Learn More</a>
-
+                    <a href="{{ url('/riskanalysis') }}" class="modern-button">Learn More</a>
                 </div>
             </div>
             <div class="hover-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
