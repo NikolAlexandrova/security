@@ -200,9 +200,6 @@
                 <img src="{{ asset('images/security about.jpeg') }}" alt="Person Image" class="w-full lg:w-full transition duration-300 ease-in-out transform hover:scale-110" style="width: 105%;">
             </div>
             <div class="absolute top-0 left-0 bg-gradient-to-b from-transparent to-black w-full h-full opacity-50 transition duration-300 ease-in-out"></div>
-            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center transition duration-300 ease-in-out opacity-0 hover:opacity-100">
-                <h2 class="title text-white text-center">Meet John Doe</h2>
-            </div>
         </div>
 
         <div class="lg:w-2/3 lg:pl-10 fade-in-box" style="animation-delay: 0.4s;">
