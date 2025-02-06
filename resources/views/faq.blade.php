@@ -235,7 +235,7 @@
             </div>
         </div>
         <div class="hidden lg:block">
-            <img src="{{ asset('images/defense.jpeg') }}" alt="Security Image" class="rounded-lg shadow-lg">
+            <img src="{{ asset('Images/WhatsApp Image 2025-02-06 at 13.57.04.jpeg') }}" alt="Security Image" class="rounded-lg shadow-lg">
         </div>
     </div>
 </section>

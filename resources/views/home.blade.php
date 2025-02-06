@@ -280,20 +280,20 @@
 </section>
 
 <!-- Contact Form Section -->
-<section class="help-section py-12">
-    <div class="container mx-auto text-center px-6 md:px-12">
+<section class="help-section py-8">
+    <div class="container mx-auto text-center px-4 md:px-10">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">How We Can Help You</h2>
         <p class="text-gray-700 mb-8">At Global Security AHS, we provide tailored security solutions for your unique needs. Our experts specialize in safeguarding facilities and events, offering services like risk assessments, security planning, and on-site management. Whether protecting airports, power plants, hotels, or offices, we ensure top-tier security with a proactive, integrated approach. Our strategies enhance your business operations and provide peace of mind, allowing your business to thrive securely.</p>
 
-        <div class="image-gallery grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="image-gallery grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
             <div class="hover-card rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('images/1e5b30d4-2bf2-4eba-b780-88080e827c6a.jpeg') }}" alt="Image 1" class="w-full h-full object-cover">
+                <img src="{{ asset('Images/WhatsApp Image 2025-02-06 at 13.57.04.jpeg') }}" alt="Image 1" class="w-full h-full object-cover">
             </div>
             <div class="hover-card rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Image 2" class="w-full h-full object-cover">
+                <img src="{{ asset('Images/WhatsApp Image 2025-02-06 at 13.57.05 (2).jpeg') }}" alt="Image 2" class="w-full h-full object-cover">
             </div>
             <div class="hover-card rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('images/6712c3ca-de7e-4c62-8c66-73080665fb7b.jpeg') }}" alt="Image 3" class="w-full h-full object-cover">
+                <img src="{{ asset('Images/WhatsApp Image 2025-02-06 at 13.57.05.jpeg') }}" alt="Image 3" class="w-full h-full object-cover">
             </div>
         </div>
 

@@ -164,7 +164,7 @@
                     <p class="text-gray-700 text-center">Our programs equip security personnel with the skills needed for top-notch protection and risk management.</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="{{ asset('images/85e4311d-87a6-4221-826e-8d0184691b58.JPG') }}" alt="Tactical Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
+                    <img src="{{ asset('Images/tacticall.jpeg') }}" alt="Tactical Training" class="rounded-lg shadow-lg mb-4 w-full h-64 object-cover">
                     <h4 class="text-xl font-semibold mb-2">Tactical Training</h4>
                     <p class="text-gray-700 text-center">Specialized training for tactical operations, including SWAT and special unit tactics, for high-stakes situations.</p>
                 </div>
