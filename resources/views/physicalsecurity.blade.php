@@ -373,17 +373,6 @@
             <div class="w-full md:w-1/3">
                 <h4 class="font-bold mb-2">About the company</h4>
                 <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="images/facebook.jpeg" alt="Facebook Icon" class="w-8 h-8">
-                    </a>
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="images/instagram.jpeg" alt="Instagram Icon" class="w-8 h-8">
-                    </a>
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="images/linkedin.jpeg" alt="LinkedIn Icon" class="w-8 h-8">
-                    </a>
-                </div>
             </div>
         </div>
     </div>

@@ -171,17 +171,17 @@
     <div class="container mx-auto px-6 md:px-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
             <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
-                <img src="images/identification-icon.png" alt="Risk Identification" class="w-12 h-12 mx-auto mb-4">
+{{--                <img src="images/identification-icon.png" alt="Risk Identification" class="w-12 h-12 mx-auto mb-4">--}}
                 <h3 class="text-2xl font-bold mb-2">Risk Identification</h3>
                 <p class="text-gray-700">Identify vulnerabilities in your business that could lead to security breaches or operational risks.</p>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
-                <img src="images/assessment-icon.png" alt="Risk Assessment" class="w-12 h-12 mx-auto mb-4">
+{{--                <img src="images/assessment-icon.png" alt="Risk Assessment" class="w-12 h-12 mx-auto mb-4">--}}
                 <h3 class="text-2xl font-bold mb-2">Risk Assessment</h3>
                 <p class="text-gray-700">Evaluate the potential impact of each risk on your business and prioritize based on severity.</p>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-md text-center transition-transform transform hover:scale-105">
-                <img src="images/mitigation-icon.png" alt="Risk Mitigation" class="w-12 h-12 mx-auto mb-4">
+{{--                <img src="images/mitigation-icon.png" alt="Risk Mitigation" class="w-12 h-12 mx-auto mb-4">--}}
                 <h3 class="text-2xl font-bold mb-2">Risk Mitigation</h3>
                 <p class="text-gray-700">Implement solutions to minimize or eliminate risks, ensuring the safety of your assets and personnel.</p>
             </div>
@@ -349,17 +349,6 @@
             <div class="w-full md:w-1/3">
                 <h4 class="font-bold mb-2">About the company</h4>
                 <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="images/facebook.jpeg" alt="Facebook Icon" class="w-8 h-8">
-                    </a>
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="images/instagram.jpeg" alt="Instagram Icon" class="w-8 h-8">
-                    </a>
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <img src="images/linkedin.jpeg" alt="LinkedIn Icon" class="w-8 h-8">
-                    </a>
-                </div>
             </div>
         </div>
     </div>

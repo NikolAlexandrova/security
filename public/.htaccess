@@ -3,6 +3,11 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # ✅ Allow Direct Access to Static Assets (Favicons, Images, etc.)
+    <FilesMatch "\.(ico|png|svg|webmanifest)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+
     RewriteEngine On
 
     # Handle Authorization Header
@@ -13,6 +18,11 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
+
+    # ✅ Bypass Laravel Routing for Static Files (Favicons, Images, JS, CSS)
+    RewriteCond %{REQUEST_URI} \.(?:ico|png|jpg|jpeg|gif|css|js|svg|webmanifest)$ [NC]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule .* - [L]
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

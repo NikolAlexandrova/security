@@ -263,18 +263,6 @@
             </p>
 
             <p class="text-gray-400 mt-4">Global Security AHS ©️ 2007</p>
-
-            <div class="flex space-x-4 mt-4">
-                <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                    <img src="{{ asset('images/facebook.jpeg') }}" alt="Facebook Icon" class="w-8 h-8">
-                </a>
-                <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                    <img src="{{ asset('images/instagram.jpeg') }}" alt="Instagram Icon" class="w-8 h-8">
-                </a>
-                <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                    <img src="{{ asset('images/linkedin.jpeg') }}" alt="LinkedIn Icon" class="w-8 h-8">
-                </a>
-            </div>
         </div>
         <div class="w-full md:w-1/3 mb-6 md:mb-0">
             <div class="mb-4">

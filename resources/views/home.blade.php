@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>Global Security</title>
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+
+    <!-- Apple Touch Icon (for iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Web Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+
     <style>
         .hover-card:hover {
             transform: scale(1.05);
@@ -335,17 +350,7 @@
             <div class="w-full md:w-1/3">
                 <h4 class="font-bold mb-2">About the company</h4>
                 <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" target="_blank" class="text-white hover:text-gray-400">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
+
             </div>
         </div>
     </div>
