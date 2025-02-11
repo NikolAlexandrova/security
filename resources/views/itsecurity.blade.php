@@ -363,23 +363,24 @@
             </div>
 
             <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                <div class="flex items-center mb-4">
+                <div class="mb-4">
                     <i class="fas fa-map-marker-alt mr-2"></i>
-                    <span>444 S. Cedros Ave, Solana Beach, California</span>
+                    <span>Dominican Republic, Santo Domingo</span>
                 </div>
-                <div class="flex items-center mb-4">
+                <div class="mb-4">
                     <i class="fas fa-phone mr-2"></i>
-                    <span>+1 (849) 629-6056</span>
+                    <span>+1(849) 455-7733</span>
                 </div>
-                <div class="flex items-center">
+                <div>
                     <i class="fas fa-envelope mr-2"></i>
-                    <a href="mailto:support@company.com" class="hover:text-gray-400">support@company.com</a>
+                    <a href="mailto:zelig.ron@gmail.com" class="hover:text-gray-400">zelig.ron@gmail.com</a>
                 </div>
             </div>
 
             <div class="w-full md:w-1/3">
                 <h4 class="font-bold mb-2">About the company</h4>
-                <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts. We operate throughout Latin America to protect our clients.</p>
+                <p class="text-gray-400">Global Security AHS was created in 2007 by a team of Israeli experts who graduated from the special intelligence and security units of the state of Israel. Global Security AHS with its offices in Mexico and the US, operates throughout Latin America.</p>
+
             </div>
         </div>
     </div>
